@@ -48,7 +48,7 @@ while True:
             if "trollmode" in data:
                 threading.Thread(target=win_destroy).start()
                 os.startfile("pymatrix.py")
-                time.sleep("3")
+                time.sleep(3)
                 mixer.init()
                 mixer.music.load("rickturn.mp3")
                 mixer.music.set_volume(0.7)
