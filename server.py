@@ -1,5 +1,6 @@
 import socket
 import threading
+import datetime
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -8,9 +9,15 @@ s.bind(("127.0.0.1", 62121))
 clients_conn_list = []
 clients_addr_list = []
 
+
+
 def process_input():
     while True:
         input_data = input("> ")
+        date = datetime.datetime.now()
+        hour = date.strftime("%H")
+        minute = date.strftime("%M")
+        running = True
         if input_data == "list":
             print("")
             for x in range(0, len(clients_addr_list)):
@@ -25,11 +32,28 @@ def process_input():
                 l = len(clients_conn_list)
                 l = l - 1
                 print(l)
+                timer = input("timer>")
+                if timer == "yes":
+                    wake_up_hour = input("hour>")
+                    wake_up_minute = input("minute>")
+                    if wake_up_hour == hour and wake_up_minute == minute:
+                        print("time's up")
+                    else:
+                        while running:
+                            date = datetime.datetime.now()
+                            hour = date.strftime("%H")
+                            minute = date.strftime("%M")
+                            second = date.strftime("%S")
+                            print(hour, minute, second)
+                            if wake_up_hour == hour and wake_up_minute == minute:
+                                running = False
+                            else:
+                                running = True
                 if target < l:
                     while target <= l:
                         try:
                             clients_conn_list[target].sendall("trollmode".encode("utf-8"))
-                            print("Sent trollmode coommand")
+                            print("Sent trollmode command")
                         except:
                             clients_conn_list.pop(target)
                             clients_addr_list.pop(target)
@@ -59,6 +83,23 @@ def process_input():
                 l = len(clients_conn_list)
                 l = l - 1
                 print(l)
+                timer = input("timer>")
+                if timer == "yes":
+                    wake_up_hour = input("hour>")
+                    wake_up_minute = input("minute>")
+                    if wake_up_hour == hour and wake_up_minute == minute:
+                        print("time's up")
+                    else:
+                        while running:
+                            date = datetime.datetime.now()
+                            hour = date.strftime("%H")
+                            minute = date.strftime("%M")
+                            second = date.strftime("%S")
+                            print(hour, minute, second)
+                            if wake_up_hour == hour and wake_up_minute == minute:
+                                running = False
+                            else:
+                                running = True
                 if target < l:
                     while target <= l:
                         try:
@@ -72,7 +113,6 @@ def process_input():
                 else:
                     try:
                         clients_conn_list[target].sendall("exitloop".encode("utf-8"))
-                        print("Sent print command")
                     except:
                         clients_conn_list.pop(target)
                         clients_addr_list.pop(target)
@@ -92,6 +132,23 @@ def process_input():
                 l = len(clients_conn_list)
                 l = l - 1
                 print(l)
+                timer = input("timer>")
+                if timer == "yes":
+                    wake_up_hour = input("hour>")
+                    wake_up_minute = input("minute>")
+                    if wake_up_hour == hour and wake_up_minute == minute:
+                        print("time's up")
+                    else:
+                        while running:
+                            date = datetime.datetime.now()
+                            hour = date.strftime("%H")
+                            minute = date.strftime("%M")
+                            second = date.strftime("%S")
+                            print(hour, minute, second)
+                            if wake_up_hour == hour and wake_up_minute == minute:
+                                running = False
+                            else:
+                                running = True
                 if target < l:
                     while target <= l:
                         try:
@@ -126,6 +183,23 @@ def process_input():
                 l = len(clients_conn_list)
                 l = l - 1
                 print(l)
+                timer = input("timer>")
+                if timer == "yes":
+                    wake_up_hour = input("hour>")
+                    wake_up_minute = input("minute>")
+                    if wake_up_hour == hour and wake_up_minute == minute:
+                        print("time's up")
+                    else:
+                        while running:
+                            date = datetime.datetime.now()
+                            hour = date.strftime("%H")
+                            minute = date.strftime("%M")
+                            second = date.strftime("%S")
+                            print(hour, minute, second)
+                            if wake_up_hour == hour and wake_up_minute == minute:
+                                running = False
+                            else:
+                                running = True
                 if target < l:
                     while target <= l:
                         try:
@@ -160,6 +234,23 @@ def process_input():
                 l = len(clients_conn_list)
                 l = l - 1
                 print(l)
+                timer = input("timer>")
+                if timer == "yes":
+                    wake_up_hour = input("hour>")
+                    wake_up_minute = input("minute>")
+                    if wake_up_hour == hour and wake_up_minute == minute:
+                        print("time's up")
+                    else:
+                        while running:
+                            date = datetime.datetime.now()
+                            hour = date.strftime("%H")
+                            minute = date.strftime("%M")
+                            second = date.strftime("%S")
+                            print(hour, minute, second)
+                            if wake_up_hour == hour and wake_up_minute == minute:
+                                running = False
+                            else:
+                                running = True
                 if target < l:
                     while target <= l:
                         try:
@@ -198,6 +289,23 @@ def process_input():
                 l = len(clients_conn_list)
                 l = l - 1
                 print(l)
+                timer = input("timer>")
+                if timer == "yes":
+                    wake_up_hour = input("hour>")
+                    wake_up_minute = input("minute>")
+                    if wake_up_hour == hour and wake_up_minute == minute:
+                        print("time's up")
+                    else:
+                        while running:
+                            date = datetime.datetime.now()
+                            hour = date.strftime("%H")
+                            minute = date.strftime("%M")
+                            second = date.strftime("%S")
+                            print(hour, minute, second)
+                            if wake_up_hour == hour and wake_up_minute == minute:
+                                running = False
+                            else:
+                                running = True
                 if target < l:
                     while target <= l:
                         try:
@@ -236,6 +344,23 @@ def process_input():
                 l = len(clients_conn_list)
                 l = l - 1
                 print(l)
+                timer = input("timer>")
+                if timer == "yes":
+                    wake_up_hour = input("hour>")
+                    wake_up_minute = input("minute>")
+                    if wake_up_hour == hour and wake_up_minute == minute:
+                        print("time's up")
+                    else:
+                        while running:
+                            date = datetime.datetime.now()
+                            hour = date.strftime("%H")
+                            minute = date.strftime("%M")
+                            second = date.strftime("%S")
+                            print(hour, minute, second)
+                            if wake_up_hour == hour and wake_up_minute == minute:
+                                running = False
+                            else:
+                                running = True
                 if target < l:
                     while target <= l:
                         try:
@@ -271,6 +396,23 @@ def process_input():
                 l = len(clients_conn_list)
                 l = l - 1
                 print(l)
+                timer = input("timer>")
+                if timer == "yes":
+                    wake_up_hour = input("hour>")
+                    wake_up_minute = input("minute>")
+                    if wake_up_hour == hour and wake_up_minute == minute:
+                        print("time's up")
+                    else:
+                        while running:
+                            date = datetime.datetime.now()
+                            hour = date.strftime("%H")
+                            minute = date.strftime("%M")
+                            second = date.strftime("%S")
+                            print(hour, minute, second)
+                            if wake_up_hour == hour and wake_up_minute == minute:
+                                running = False
+                            else:
+                                running = True
                 if target < l:
                     while target <= l:
                         try:
@@ -308,6 +450,23 @@ def process_input():
                 l = len(clients_conn_list)
                 l = l - 1
                 print(l)
+                timer = input("timer>")
+                if timer == "yes":
+                    wake_up_hour = input("hour>")
+                    wake_up_minute = input("minute>")
+                    if wake_up_hour == hour and wake_up_minute == minute:
+                        print("time's up")
+                    else:
+                        while running:
+                            date = datetime.datetime.now()
+                            hour = date.strftime("%H")
+                            minute = date.strftime("%M")
+                            second = date.strftime("%S")
+                            print(hour, minute, second)
+                            if wake_up_hour == hour and wake_up_minute == minute:
+                                running = False
+                            else:
+                                running = True
                 if target < l:
                     while target <= l:
                         try:
@@ -327,14 +486,6 @@ def process_input():
                         clients_conn_list.pop(target)
                         clients_addr_list.pop(target)
                         print("Error: Could not access client. Removing from list")
-            else:
-                try:
-                    clients_conn_list[target].sendall("sendcommand".encode("utf-8"))
-                    clients_conn_list[target].sendall(command.encode("utf-8"))
-                except:
-                    clients_conn_list.pop(target)
-                    clients_addr_list.pop(target)
-                    print("Error: Could not access client. Removing from list")
         elif "sinewave" in input_data:
             target = int(input_data.replace("sinewave ", ""))
             pt = input("pitch>")
@@ -344,6 +495,23 @@ def process_input():
                 l = len(clients_conn_list)
                 l = l - 1
                 print(l)
+                timer = input("timer>")
+                if timer == "yes":
+                    wake_up_hour = input("hour>")
+                    wake_up_minute = input("minute>")
+                    if wake_up_hour == hour and wake_up_minute == minute:
+                        print("time's up")
+                    else:
+                        while running:
+                            date = datetime.datetime.now()
+                            hour = date.strftime("%H")
+                            minute = date.strftime("%M")
+                            second = date.strftime("%S")
+                            print(hour, minute, second)
+                            if wake_up_hour == hour and wake_up_minute == minute:
+                                running = False
+                            else:
+                                running = True
                 if target < l:
                     while target <= l:
                         try:
